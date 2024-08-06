@@ -11,7 +11,7 @@ jobs:
     container:
       image: maven:latest
     steps:
-       - name: Run Maven clean install
-         run: mvn clean install
        - name: open-jdk install
          run: openjdk:24-jdk-slim:latest
+       - name: Run Maven clean install
+         run: mvn clean install
