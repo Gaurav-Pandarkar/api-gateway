@@ -12,6 +12,6 @@ jobs:
       image: maven:latest
     steps:
        - name: open-jdk install
-         run: openjdk:24-jdk-slim:latest
+         run: apt-get install -y openjdk-17-jdk
        - name: Run Maven clean install
          run: mvn clean install
