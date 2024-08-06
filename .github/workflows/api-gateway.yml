@@ -8,6 +8,10 @@ on:
 jobs:
   api-gateway:
     runs-on: ubuntu-latest
+    container:
+      image: maven:latest
     steps:
-      - name: maven install
-        run: apt-get install -y maven
+       - name: Run Maven clean install
+         run: mvn clean install
+       - name: open-jdk install
+         run: openjdk:24-jdk-slim:latest
