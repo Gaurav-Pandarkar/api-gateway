@@ -1,0 +1,15 @@
+name: Api-Gateway github action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  api-gateway:
+    runs-on: ubuntu-latest
+    container:
+      image: openjdk:24-jdk-slim:latest
+    steps:
+      - name: maven install
+        run: apt-get install -y maven
