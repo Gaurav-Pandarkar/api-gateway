@@ -41,7 +41,7 @@ jobs:
          run: mvn org.owasp:dependency-check-maven:check
 
        - name: Build Code and create docker image
-         run: mvn clean install docker:build -Dimage.registry=${{vars.CONTAINER_REGISTRY_USER}} -Dimage.tag=latest
+         run: mvn clean install docker:build -Dimage.registry=${{vars.DOCKER_REGISTRY_USER}} -Dimage.tag=latest
 
        - name: Login to Docker Hub Resgistry
          uses: docker/login-action@v3
@@ -50,6 +50,6 @@ jobs:
            password: ${{secrets.DOCKER_REGISTRY_PAT}}
             
        - name: Push Docker Image
-         run: docker push ${{vars.CONTAINER_REGISTRY_USER}}/api-gateway:$GITHUB_REF_NAME
+         run: docker push ${{vars.DOCKER_REGISTRY_USER}}/api-gateway:$GITHUB_REF_NAME
          
          
