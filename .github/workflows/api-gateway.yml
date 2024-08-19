@@ -52,3 +52,4 @@ jobs:
        - name: Push Docker Image
          run: docker push ${{vars.CONTAINER_REGISTRY_USER}}/api-gateway:$GITHUB_REF_NAME
          
+         
